@@ -1,0 +1,21 @@
+<ion-view view-title="Disicplinas">
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">Disciplinas</h1>     
+    </ion-header-bar>
+    
+    <ion-content>
+        <div ng-if="disciplinas.length == 0" class="text-center prof-empty-box">            
+            <img src="../img/fnd-empty.png" />
+            <h3>Esta lista esta vazia</h3>
+            <p>A lista deve ser criada por um professor</p>
+        </div>
+        
+        <ion-list ng-if="disciplinas.length > 0" show-delete="showDelete">
+            <ion-item class="item-remove-animate item-icon-right" ng-repeat="disciplina in disciplinas" type="item-text-wrap" href="#/view/disciplinas/{{ disciplinas.id }}">
+                <h2>{{ disciplina.alias }}</h2>
+                <p>{{ disciplina.nome }}</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
